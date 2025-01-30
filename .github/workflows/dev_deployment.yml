@@ -25,7 +25,7 @@ jobs:
 
       - name: Configure snowflake connection
         run: |
-          snow connection add --connection-name "dev-connection" --account $SF_ACCOUNT --username $SF_USER --password $SF_PSWD --warehouse $SF_WH --database $SF_DB
+          snow connection add --connection-name "dev-connection" --account env.SF_ACCOUNT --username env.SF_USER --password env.SF_PSWD --warehouse env.SF_WH --database env.SF_DB
           
       - name: Execute SQL file
         run: |
