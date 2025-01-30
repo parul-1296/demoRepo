@@ -1,8 +1,8 @@
 default_connection_name = "myconnection"
 
 [connections.myconnection]
-account = ${{ secrets.SF_ACCOUNT }}
-user = ${{ secrets.SF_USER }}
+account = "mi03451.us-east-2.aws"
+user = "PARUL"
 password = "SilentPatient@2311"
 warehouse = "COMPUTE_WH"
 database = "DEMODATABASE"
