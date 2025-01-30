@@ -27,4 +27,4 @@ jobs:
 
       
       - name: Deploy scripts to preprod environment
-        run: snow git execute "@demoRepo/branches/main/demo_table.sql"
+        run: snow sql --file demo_table.sql"
