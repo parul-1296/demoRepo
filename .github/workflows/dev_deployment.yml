@@ -1,0 +1,28 @@
+
+name: Deploy table
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  create_table:
+    runs-on: ubuntu-latest
+
+    env:
+      SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SF_USER }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SF_PSWD }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_DB: ${{ secrets.SF_DB }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_WH: ${{ secrets.SF_WH }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install snowflake-cli
+        uses: Snowflake-Labs/snowflake-cli-action@v1.5
+        with:
+          cli-version: "latest"
+      
+      - name: Execute SQL file
+        run: snow sql -f demo_table.sql
