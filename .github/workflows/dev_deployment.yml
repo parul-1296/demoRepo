@@ -27,7 +27,7 @@ jobs:
 
       - name: Configure snowflake connection
         run: |
-          snowflake connection create my_conn \
+          snow connection create my_conn \
           --account ${{ secrets.SF_ACCOUNT }} \
           --user ${{ secrets.SF_USER }} \ 
           --password ${{ secrets.SF_PSWD }} \
