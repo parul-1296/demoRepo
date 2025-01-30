@@ -6,14 +6,15 @@ on:
   
 jobs:
   create_table:
-    runs-on: ubuntu-latest
-
+    environment: dev
     env:
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SF_USER }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SF_PSWD }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_DB: ${{ secrets.SF_DB }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_WH: ${{ secrets.SF_WH }}
+      
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
