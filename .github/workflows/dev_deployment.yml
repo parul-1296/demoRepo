@@ -21,18 +21,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install snowflake-cli
-        uses: Snowflake-Labs/snowflake-cli-action@v1.5
-        with:
-          cli-version: "latest"
+        uses: pip install snowflake-cli
 
-      - name: Configure snowflake connection
+      - name: Configure database
         run: |
-          snow connection my_conn \
-          --account ${{ secrets.SF_ACCOUNT }} \
-          --user ${{ secrets.SF_USER }} \ 
-          --password ${{ secrets.SF_PSWD }} \
-          --database: ${{ secrets.SF_DB }} \
-          --warehouse: ${{ secrets.SF_WH }}
-      
-      - name: Execute SQL file
-        run: snow sql -f demo_table.sql
+          snow sql -q "
+            USE DATABASE $SF_DB;
+          "
+          snow sql -f demo_table.sql
