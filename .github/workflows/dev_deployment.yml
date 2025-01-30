@@ -23,10 +23,6 @@ jobs:
       - name: Install snowflake-cli
         run: pip install snowflake-cli
 
-      - name: Configure snowflake connection
-        run: |
-          snow sql --account env.SF_ACCOUNT --username env.SF_USER --warehouse env.SF_WH --database env.SF_DB
-          
       - name: Execute SQL file
         run: |
           snow sql -f demo_table.sql
