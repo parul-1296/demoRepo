@@ -19,8 +19,7 @@ jobs:
           
       - name: Configure Snow CLI
         run: |
-          snow login --authenticates-with-password \
-            --account--name ${{ secrets.SF_ACCOUNT }}\
+          snow config set --account--name ${{ secrets.SF_ACCOUNT }}\
             --username ${{ secrets.SF_USER }}\
             --password ${{ secrets.SF_PSWD }}\
             --database ${{ secrets.SF_DB }}\
