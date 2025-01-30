@@ -1,0 +1,7 @@
+default_connection_name = "myconnection"
+
+[connections.myconnection]
+account = "mi03451.us-east-2.aws"
+user = "PARUL"
+password = "SilentPatient@2311"
+warehouse = "COMPUTE_WH"
