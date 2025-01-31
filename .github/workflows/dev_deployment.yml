@@ -35,7 +35,8 @@ jobs:
           database="$SF_DB"
           warehouse="$SF_WH"
           schema="$SF_SCHEMA"
-          chmod 0600 /home/runner/.snowflake/config.toml
+          EOF
+          chmod 600 ~/.snowflake/config.toml
 
       - name: Execute SQL file
         run: |
