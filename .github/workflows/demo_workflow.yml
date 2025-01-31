@@ -1,5 +1,5 @@
 
-name: Deploy table
+name: Demo table deployment
 
 on:
   workflow_dispatch:
