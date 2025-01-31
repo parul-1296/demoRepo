@@ -2,18 +2,21 @@
 name: Demo table deployment
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   
 jobs:
   create_table:
     runs-on: ubuntu-latest
 
-    #env:
-      #SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
-      #SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SF_USER }}
-      #SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SF_PSWD }}
-      #SNOWFLAKE_CONNECTIONS_DEFAULT_DB: ${{ secrets.SF_DB }}
-      #SNOWFLAKE_CONNECTIONS_DEFAULT_WH: ${{ secrets.SF_WH }}
+    env:
+      SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SF_USER }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SF_PSWD }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_DB: ${{ secrets.SF_DB }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_WH: ${{ secrets.SF_WH }}
 
     steps:
       - name: Checkout repository
