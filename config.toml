@@ -1,7 +1,9 @@
-[default]
-account = "${SF_ACCOUNT}"
-user = "${SF_USER}"
-password = "${SF_PSWD}"
-warehouse = "${SF_WH}"
-database = "${SF_DB}"
-schema = "${SF_SCHEMA}
+default_connection_name = "myconnection"
+
+[connections.myconnection]
+account = "mi03451.us-east-2.aws"
+user = "PARUL"
+password = "SilentPatient@2311"
+warehouse = "COMPUTE_WH"
+database = "DEMODATABASE"
+schema = "DEMOSCHEMA"
