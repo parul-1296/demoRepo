@@ -23,6 +23,9 @@ jobs:
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
           cli-version: "latest"
+
+      - name: Test snowflake connection
+        run: snow connection test
       
       - name: Execute SQL file
         run: snow sql -f demo_table.sql
