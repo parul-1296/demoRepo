@@ -25,6 +25,10 @@ jobs:
         with:
           cli-version: "latest"
 
+      - name: Configure Snow cli
+        run: |
+          snow configure set database $SF_DB
+
       - name: Execute SQL file
         run: |
           snow sql -f demo_table.sql
