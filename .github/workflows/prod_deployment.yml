@@ -1,5 +1,5 @@
 
-name: Deploy table
+name: Deploy table in Prod
 
 on:
   workflow_dispatch:
