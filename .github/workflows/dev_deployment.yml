@@ -38,4 +38,4 @@ jobs:
 
       - name: Execute SQL file
         run: |
-          snow sql -f demo_table.sql
+          snow sql -f dev_table.sql
